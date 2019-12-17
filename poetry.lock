@@ -67,6 +67,20 @@ dotenv = ["python-dotenv"]
 
 [[package]]
 category = "main"
+description = "Flask-MongoEngine is a Flask extension that provides integration with MongoEngine and WTF model forms."
+name = "flask-mongoengine"
+optional = false
+python-versions = "*"
+version = "0.9.5"
+
+[package.dependencies]
+Flask = ">=0.8"
+Flask-WTF = ">=0.13"
+mongoengine = ">=0.8.0"
+six = "*"
+
+[[package]]
+category = "main"
 description = "Simple framework for creating REST APIs"
 name = "flask-restful"
 optional = false
@@ -81,6 +95,18 @@ six = ">=1.3.0"
 
 [package.extras]
 docs = ["sphinx"]
+
+[[package]]
+category = "main"
+description = "Simple integration of Flask and WTForms."
+name = "flask-wtf"
+optional = false
+python-versions = "*"
+version = "0.14.2"
+
+[package.dependencies]
+Flask = "*"
+WTForms = "*"
 
 [[package]]
 category = "main"
@@ -210,6 +236,17 @@ testing = ["argcomplete", "hypothesis (>=3.56)", "mock", "nose", "requests", "xm
 
 [[package]]
 category = "main"
+description = "Add .env support to your django/flask apps in development and deployments"
+name = "python-dotenv"
+optional = false
+python-versions = "*"
+version = "0.10.3"
+
+[package.extras]
+cli = ["click (>=5.0)"]
+
+[[package]]
+category = "main"
 description = "World timezone definitions, modern and historical"
 name = "pytz"
 optional = false
@@ -245,8 +282,19 @@ dev = ["pytest", "coverage", "tox", "sphinx", "pallets-sphinx-themes", "sphinx-i
 termcolor = ["termcolor"]
 watchdog = ["watchdog"]
 
+[[package]]
+category = "main"
+description = "A flexible forms validation and rendering library for Python web development."
+name = "wtforms"
+optional = false
+python-versions = "*"
+version = "2.2.1"
+
+[package.extras]
+locale = ["Babel (>=1.3)"]
+
 [metadata]
-content-hash = "cffaf16491ee64f5e02308df470527235f6818bf570d5be49c43343ba3756b32"
+content-hash = "40269d0d320cd5b7a7dce064c7f2a2ddd375c89a3f8ff057e59eadbd9561637a"
 python-versions = "^3.8"
 
 [metadata.files]
@@ -274,9 +322,17 @@ flask = [
     {file = "Flask-1.1.1-py2.py3-none-any.whl", hash = "sha256:45eb5a6fd193d6cf7e0cf5d8a5b31f83d5faae0293695626f539a823e93b13f6"},
     {file = "Flask-1.1.1.tar.gz", hash = "sha256:13f9f196f330c7c2c5d7a5cf91af894110ca0215ac051b5844701f2bfd934d52"},
 ]
+flask-mongoengine = [
+    {file = "flask-mongoengine-0.9.5.tar.gz", hash = "sha256:0f426aeafc4be2c37e9b4c0f8b5d02d012b7afc4b3b97a4119024684fe148fc1"},
+    {file = "flask_mongoengine-0.9.5-py2-none-any.whl", hash = "sha256:b6376b33cd1e624c09983a0884dc87303e54084f0e6b7f8df6794d56d35fa66f"},
+]
 flask-restful = [
     {file = "Flask-RESTful-0.3.7.tar.gz", hash = "sha256:f8240ec12349afe8df1db168ea7c336c4e5b0271a36982bff7394f93275f2ca9"},
     {file = "Flask_RESTful-0.3.7-py2.py3-none-any.whl", hash = "sha256:ecd620c5cc29f663627f99e04f17d1f16d095c83dc1d618426e2ad68b03092f8"},
+]
+flask-wtf = [
+    {file = "Flask-WTF-0.14.2.tar.gz", hash = "sha256:5d14d55cfd35f613d99ee7cba0fc3fbbe63ba02f544d349158c14ca15561cc36"},
+    {file = "Flask_WTF-0.14.2-py2.py3-none-any.whl", hash = "sha256:d9a9e366b32dcbb98ef17228e76be15702cd2600675668bca23f63a7947fd5ac"},
 ]
 itsdangerous = [
     {file = "itsdangerous-1.1.0-py2.py3-none-any.whl", hash = "sha256:b12271b2047cb23eeb98c8b5622e2e5c5e9abd9784a153e9d8ef9cb4dd09d749"},
@@ -402,6 +458,10 @@ pytest = [
     {file = "pytest-5.3.2-py3-none-any.whl", hash = "sha256:e41d489ff43948babd0fad7ad5e49b8735d5d55e26628a58673c39ff61d95de4"},
     {file = "pytest-5.3.2.tar.gz", hash = "sha256:6b571215b5a790f9b41f19f3531c53a45cf6bb8ef2988bc1ff9afb38270b25fa"},
 ]
+python-dotenv = [
+    {file = "python-dotenv-0.10.3.tar.gz", hash = "sha256:f157d71d5fec9d4bd5f51c82746b6344dffa680ee85217c123f4a0c8117c4544"},
+    {file = "python_dotenv-0.10.3-py2.py3-none-any.whl", hash = "sha256:debd928b49dbc2bf68040566f55cdb3252458036464806f4094487244e2a4093"},
+]
 pytz = [
     {file = "pytz-2019.3-py2.py3-none-any.whl", hash = "sha256:1c557d7d0e871de1f5ccd5833f60fb2550652da6be2693c1e02300743d21500d"},
     {file = "pytz-2019.3.tar.gz", hash = "sha256:b02c06db6cf09c12dd25137e563b31700d3b80fcc4ad23abb7a315f2789819be"},
@@ -417,4 +477,8 @@ wcwidth = [
 werkzeug = [
     {file = "Werkzeug-0.16.0-py2.py3-none-any.whl", hash = "sha256:e5f4a1f98b52b18a93da705a7458e55afb26f32bff83ff5d19189f92462d65c4"},
     {file = "Werkzeug-0.16.0.tar.gz", hash = "sha256:7280924747b5733b246fe23972186c6b348f9ae29724135a6dfc1e53cea433e7"},
+]
+wtforms = [
+    {file = "WTForms-2.2.1-py2.py3-none-any.whl", hash = "sha256:e3ee092c827582c50877cdbd49e9ce6d2c5c1f6561f849b3b068c1b8029626f1"},
+    {file = "WTForms-2.2.1.tar.gz", hash = "sha256:0cdbac3e7f6878086c334aa25dc5a33869a3954e9d1e015130d65a69309b3b61"},
 ]
