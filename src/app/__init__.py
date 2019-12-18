@@ -16,7 +16,7 @@ def app_factory(config_name: str) -> Flask:
     
     app = Flask(__name__)
     app.config.from_object(env_config[config_name])
-    env_config[config_name].init_app()
+    env_config[config_name].init_app(app)
 
     api.init_app(app)
     db.init_app(app)
