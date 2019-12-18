@@ -23,11 +23,8 @@ def test_db_cleanup(db_url):
 
 
 def init_test_sandbox():
-    # load_dotenv()
-    print("here")
 
     db_url = os.environ["DATABASE_URL"] or "mongodb://localhost:27017/"
-    test_db_cleanup(db_url)
 
     with MongoClient(db_url) as connection:
         
@@ -46,6 +43,6 @@ def client():
     test_app = app_factory(config_name='test')
     test_app.config['DATABASE_URL'] = sandbox_db
     
-    yield test_app.test_client()
+    yield test_app
 
     test_db_cleanup(db_url=sandbox_db)
