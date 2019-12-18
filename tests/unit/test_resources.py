@@ -26,13 +26,6 @@ def test_clear_cart(client):
         assert response.status_code != 404
 
 
-def test_clear_cart(client):
-    
-    with client.test_client() as c:
-        response = c.post('/cart/clear')
-        assert response.status_code != 404
-
-
 def test_add_cart_single(client):
     
     with client.test_client() as c:
